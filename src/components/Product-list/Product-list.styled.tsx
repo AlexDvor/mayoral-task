@@ -71,6 +71,7 @@ export const Title = styled.h1`
 
 export const InfoPrice = styled.div`
   height: 75px;
+  text-align: center;
 `;
 
 export const Price = styled.p`
