@@ -25,8 +25,8 @@ const ProductList = () => {
             </WrapperImg>
             <WrapperInfo>
               <Title>Polo manga corta ECOFRIENDS</Title>
-              <Price>25.30</Price>
-              <DiscountPrice>10.99</DiscountPrice>
+              <Price>18.99</Price>
+              <DiscountPrice>15.19$ (-20%)</DiscountPrice>
               <ColorButton type="button">mas colores</ColorButton>
               <AddButton type="button">Añadir</AddButton>
             </WrapperInfo>

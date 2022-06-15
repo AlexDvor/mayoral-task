@@ -6,11 +6,12 @@ export const Wrapper = styled.div`
   margin: 10px auto 10px auto;
 
   @media screen and (min-width: 768px) {
-    margin: 10px auto 10px 0px;
+    margin: 10px auto 10px 30px;
   }
 
   @media screen and (min-width: 1024px) {
     width: 500px;
+    margin: 10px auto 10px 80px;
   }
 `;
 

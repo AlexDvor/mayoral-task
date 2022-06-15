@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
+  justify-content: center;
   margin-top: -20px;
   margin-left: -20px;
   padding: 0px;
@@ -56,15 +56,16 @@ export const Title = styled.h1`
 export const Price = styled.p`
   font-size: 14px;
   margin-top: 25px;
+  text-decoration: line-through;
 `;
 
 export const DiscountPrice = styled.p`
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 15px;
+  color: red;
 `;
 
 export const ColorButton = styled.button`
-  /* padding: 10px; */
   font-size: 14px;
   margin-top: 15px;
   background-color: transparent;
