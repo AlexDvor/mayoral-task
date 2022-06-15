@@ -2,6 +2,9 @@ import Image from 'next/image';
 import { FC } from 'react';
 import { TProducts } from '../../../types';
 import { useState } from 'react';
+import convertedPrice from 'helpers/convertedPrice';
+import getDiscountPrice from 'helpers/getDiscountPrice';
+import checkDiscount from 'helpers/chechDiscount';
 import {
   Wrapper,
   List,
@@ -23,26 +26,6 @@ type Props = {
 const ProductList: FC<Props> = ({ data }) => {
   const [productList, setProductList] = useState(data);
 
-  const checkPrice = (price) => {
-    const text = price.toString();
-    const converted = text.replace(/\./g, ',');
-    return converted;
-  };
-
-  const checkDiscount = (price) => {
-    const discountPrice = price === 0;
-    return discountPrice ? true : false;
-  };
-
-  function countPriceWithDiscount(price, discount) {
-    if (discount === 0) {
-      return price;
-    } else {
-      const newPrice = price * ((100 - discount) / 100);
-      return newPrice.toFixed(2);
-    }
-  }
-
   return (
     <>
       <Wrapper>
@@ -56,10 +39,10 @@ const ProductList: FC<Props> = ({ data }) => {
                 <Title>{item.name}</Title>
                 <InfoPrice>
                   <Price hasDiscount={checkDiscount(item.discount)}>
-                    {checkPrice(item.price)} &#8364;
+                    {convertedPrice(item.price)} &#8364;
                   </Price>
                   <DiscountPrice hasDiscount={checkDiscount(item.discount)}>
-                    {item.discount} &#8364;
+                    {getDiscountPrice(item.price, item.discount)}
                   </DiscountPrice>
                 </InfoPrice>
                 <ColorButton type="button">mas colores</ColorButton>
