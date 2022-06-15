@@ -1,11 +1,13 @@
-import { Wrapper, Input, SearchIcon } from './Search-bar.styled';
+import { WrapperInput, Input, SearchIcon, Wrapper } from './Search-bar.styled';
 
 const SearchBar = () => {
   return (
     <>
       <Wrapper>
-        <Input type="search" placeholder="Buscar"></Input>
-        <SearchIcon></SearchIcon>
+        <WrapperInput>
+          <Input type="search" placeholder="Buscar"></Input>
+          <SearchIcon></SearchIcon>
+        </WrapperInput>
       </Wrapper>
     </>
   );
