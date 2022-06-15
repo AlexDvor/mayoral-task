@@ -1,9 +1,23 @@
 import styled from '@emotion/styled';
 
+const setDisplay = (props): string => {
+  if (props.hasDiscount) {
+    return 'none';
+  }
+  return 'block';
+};
+
+const setLineThrough = (props): string => {
+  if (!props.hasDiscount) {
+    return 'line-through';
+  }
+  return 'none';
+};
+
 export const Wrapper = styled.div`
   margin-top: 30px;
-  /* outline: 1px solid red; */
 `;
+
 export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -51,18 +65,25 @@ export const Title = styled.h1`
   text-align: center;
   font-size: 14px;
   margin-top: 15px;
+  overflow: hidden;
+  height: 15px;
+`;
+
+export const InfoPrice = styled.div`
+  height: 75px;
 `;
 
 export const Price = styled.p`
   font-size: 14px;
   margin-top: 25px;
-  text-decoration: line-through;
+  text-decoration: ${setLineThrough};
 `;
 
 export const DiscountPrice = styled.p`
   font-size: 16px;
   margin-top: 15px;
   color: red;
+  display: ${setDisplay};
 `;
 
 export const ColorButton = styled.button`

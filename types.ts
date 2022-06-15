@@ -1,6 +1,8 @@
-export type TProduct = {
+export type TProducts = {
     id: string,
     name: string,
-    price: string,
-    url:string,
+    type: string;
+    image: string;
+    price: number,
+    discount: number;
 }
