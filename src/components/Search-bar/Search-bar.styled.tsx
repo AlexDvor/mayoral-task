@@ -3,15 +3,14 @@ import { BsSearch } from 'react-icons/bs';
 
 export const Wrapper = styled.div`
   width: 250px;
-  margin: 10px auto 10px auto;
+  margin-top: 20px;
 
   @media screen and (min-width: 768px) {
-    margin: 10px auto 10px 30px;
+    margin-top: 0px;
   }
 
   @media screen and (min-width: 1024px) {
     width: 500px;
-    margin: 10px auto 10px 80px;
   }
 `;
 
@@ -19,12 +18,12 @@ export const WrapperInput = styled.div`
   position: relative;
   @media screen and (min-width: 320px) {
   }
-
   @media screen and (min-width: 768px) {
   }
   @media screen and (min-width: 1024px) {
   }
 `;
+
 export const Input = styled.input`
   height: 40px;
   width: 100%;

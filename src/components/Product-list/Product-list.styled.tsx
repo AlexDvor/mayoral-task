@@ -16,6 +16,14 @@ const setLineThrough = (props): string => {
 
 export const Wrapper = styled.div`
   margin-top: 30px;
+
+  &::before {
+    content: '';
+    width: auto;
+    height: 1px;
+    background-color: #aba8a8;
+    display: flex;
+    margin-bottom: 30px;
 `;
 
 export const List = styled.ul`
