@@ -5,16 +5,23 @@ import Container from 'components/Container/Container';
 import ProductList from 'components/Product-list/Product-list';
 import SearchBar from 'components/Search-bar/Search-bar';
 import FilterPrice from 'components/Filter-price/Filter-price';
+import { useState } from 'react';
 
 const HomePage: NextPage = () => {
+  const [productsData, setProductsData] = useState(DB);
+
+  const filteredProductByName = (data) => {
+    setProductsData(data);
+  };
+
   return (
     <>
       <Container>
         <OptionsWrapper>
           <FilterPrice></FilterPrice>
-          <SearchBar></SearchBar>
+          <SearchBar filter={filteredProductByName} data={productsData}></SearchBar>
         </OptionsWrapper>
-        <ProductList data={DB}></ProductList>
+        <ProductList data={productsData}></ProductList>
       </Container>
     </>
   );

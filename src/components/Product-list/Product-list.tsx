@@ -24,13 +24,11 @@ type Props = {
 };
 
 const ProductList: FC<Props> = ({ data }) => {
-  const [productList, setProductList] = useState(data);
-
   return (
     <>
       <Wrapper>
         <List>
-          {productList.map((item) => (
+          {data.map((item) => (
             <Item key={item.id}>
               <WrapperImg>
                 <Image src={item.image} alt={item.name} width="425" height="595"></Image>
