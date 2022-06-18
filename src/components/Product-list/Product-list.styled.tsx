@@ -1,13 +1,17 @@
 import styled from '@emotion/styled';
 
-const setDisplay = (props): string => {
+type Props = {
+  hasDiscount: boolean;
+};
+
+const setDisplay = (props: Props): string => {
   if (props.hasDiscount) {
     return 'none';
   }
   return 'block';
 };
 
-const setLineThrough = (props): string => {
+const setLineThrough = (props: Props): string => {
   if (!props.hasDiscount) {
     return 'line-through';
   }

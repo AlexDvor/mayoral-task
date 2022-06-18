@@ -12,9 +12,4 @@ const sortPriceByDescending = (data: TProducts[]): TProducts[] => {
   return [...sortedData];
 };
 
-const productWithDiscount = (data: TProducts[]): TProducts[] => {
-  const discountProduct = data.filter((item) => item.discount > 0);
-  return discountProduct;
-};
-
-export { sortPriceByAscending, sortPriceByDescending, productWithDiscount };
+export { sortPriceByAscending, sortPriceByDescending };

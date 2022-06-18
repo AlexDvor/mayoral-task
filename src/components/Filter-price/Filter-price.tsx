@@ -26,9 +26,6 @@ const FilterPrice = ({ data, filter }: Props) => {
       case 'descending':
         filter(sortPriceByDescending(products));
         break;
-      case 'discount':
-        filter(productWithDiscount(products));
-        break;
     }
   };
 
