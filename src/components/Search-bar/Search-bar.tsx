@@ -1,5 +1,5 @@
-import { WrapperInput, Input, SearchIcon, Wrapper } from './Search-bar.styled';
 import { useState } from 'react';
+import { WrapperInput, Input, SearchIcon, Wrapper } from './Search-bar.styled';
 import queryNormalize from 'helpers/queryNormalize';
 
 const SearchBar = ({ data, filter }) => {
@@ -10,10 +10,9 @@ const SearchBar = ({ data, filter }) => {
     filteredData(value);
   };
 
-  const filteredData = (itemName: string) => {
+  const filteredData = (itemName: string): void => {
     const articleName = queryNormalize(itemName);
     const filteredData = products.filter((item) => queryNormalize(item.name).includes(articleName));
-    console.log('🚀 - filteredData', filteredData);
     filter(filteredData);
   };
 
@@ -21,7 +20,7 @@ const SearchBar = ({ data, filter }) => {
     <>
       <Wrapper>
         <WrapperInput>
-          <Input type="search" placeholder="Buscar" onChange={handleChange}></Input>
+          <Input type="text" placeholder="Buscar" onChange={handleChange}></Input>
           <SearchIcon></SearchIcon>
         </WrapperInput>
       </Wrapper>

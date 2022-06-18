@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { BsSearch } from 'react-icons/bs';
 
 export const Wrapper = styled.div`
-  width: 250px;
   margin-top: 20px;
 
   @media screen and (min-width: 768px) {
@@ -16,27 +15,14 @@ export const Wrapper = styled.div`
 
 export const WrapperInput = styled.div`
   position: relative;
-  @media screen and (min-width: 320px) {
-  }
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1024px) {
-  }
 `;
 
 export const Input = styled.input`
-  height: 40px;
-  width: 100%;
+  height: 15px;
+  width: 174px;
   padding: 10px 10px 10px 35px;
   border-radius: 5px;
   border: 2px solid #aba8a8;
-  @media screen and (min-width: 320px) {
-  }
-
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1024px) {
-  }
 `;
 
 export const SearchIcon = styled(BsSearch)`

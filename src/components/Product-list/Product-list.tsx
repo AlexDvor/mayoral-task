@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import { TProducts } from '../../../types';
-import { useState } from 'react';
 import convertedPrice from 'helpers/convertedPrice';
 import getDiscountPrice from 'helpers/getDiscountPrice';
 import checkDiscount from 'helpers/chechDiscount';
