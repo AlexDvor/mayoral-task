@@ -1,11 +1,17 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { WrapperInput, Input, SearchIcon, Wrapper } from './Search-bar.styled';
+import { TProducts } from '../../../types';
 import queryNormalize from 'helpers/queryNormalize';
 
-const SearchBar = ({ data, filter }) => {
+type Props = {
+  data: TProducts[];
+  filter: (newData: TProducts[]) => void;
+};
+
+const SearchBar = ({ data, filter }: Props) => {
   const [products, setProducts] = useState(data);
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     filteredData(value);
   };

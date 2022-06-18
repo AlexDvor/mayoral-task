@@ -11,9 +11,3 @@ export const OptionsWrapper = styled.div`
     justify-content: space-between;
   }
 `;
-
-// export const OptionsItem = styled.li`
-//   &:not(:first-child) {
-//     margin-top: 20px;
-//   }
-// `;

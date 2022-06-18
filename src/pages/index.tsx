@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { NextPage } from 'next';
-import DB from '../../data/products.json';
+import { TProducts } from '../../types';
 import { OptionsWrapper } from './index.styled';
+import DB from '../../data/products.json';
 import Container from 'components/Container/Container';
 import ProductList from 'components/Product-list/Product-list';
 import SearchBar from 'components/Search-bar/Search-bar';
 import FilterPrice from 'components/Filter-price/Filter-price';
 
 const HomePage: NextPage = () => {
-  const [productsData, setProductsData] = useState(DB);
+  const [productsData, setProductsData] = useState<TProducts[]>(DB);
 
-  const filteredData = (newData: []): void => {
+  const filteredData = (newData: TProducts[]): void => {
     setProductsData(newData);
   };
 

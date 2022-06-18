@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { FC } from 'react';
 import { TProducts } from '../../../types';
 import convertedPrice from 'helpers/convertedPrice';
 import getDiscountPrice from 'helpers/getDiscountPrice';
@@ -22,7 +21,7 @@ type Props = {
   data: TProducts[];
 };
 
-const ProductList: FC<Props> = ({ data }) => {
+const ProductList = ({ data }: Props) => {
   return (
     <>
       <Wrapper>
