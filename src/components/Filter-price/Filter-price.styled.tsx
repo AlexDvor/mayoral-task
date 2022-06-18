@@ -6,8 +6,9 @@ export const SelectBox = styled.select`
   font-size: 16px;
   color: black;
   height: 27px;
-  width: 145px;
+  width: 170px;
   margin: 0px;
   border-radius: 5px;
+  border: 2px solid #aba8a8;
 `;
 export const OptionItem = styled.option``;

@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { SelectBox, OptionItem } from './Filter-price.styled';
 import { TProducts } from '../../../types';
-import {
-  sortPriceByAscending,
-  sortPriceByDescending,
-  productWithDiscount,
-} from 'helpers/sortPrice';
+import { sortPriceByAscending, sortPriceByDescending } from 'helpers/sortPrice';
 
 type Props = {
   data: TProducts[];
@@ -35,7 +31,6 @@ const FilterPrice = ({ data, filter }: Props) => {
         <OptionItem value="hide">--Ordenar precio--</OptionItem>
         <OptionItem value="ascending">Precio ascendente</OptionItem>
         <OptionItem value="descending">Precio descendente</OptionItem>
-        <OptionItem value="discount">Precio con descuentos</OptionItem>
       </SelectBox>
     </>
   );

@@ -23,6 +23,9 @@ export const Input = styled.input`
   padding: 10px 10px 10px 35px;
   border-radius: 5px;
   border: 2px solid #aba8a8;
+  @media screen and (min-width: 1024px) {
+    width: 300px;
+  }
 `;
 
 export const SearchIcon = styled(BsSearch)`

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { TProducts } from '../../../types';
 import convertedPrice from 'helpers/convertedPrice';
 import getDiscountPrice from 'helpers/getDiscountPrice';
-import checkDiscount from 'helpers/chechDiscount';
+import checkDiscount from 'helpers/checkDiscount';
 import {
   Wrapper,
   List,
