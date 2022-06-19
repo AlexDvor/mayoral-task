@@ -1,15 +1,18 @@
 import { useState } from 'react';
-import { NextPage } from 'next';
+import { NextPage, GetStaticProps } from 'next';
 import { TProducts } from '../../types';
 import { OptionsWrapper } from './index.styled';
-import DB from '../../data/products.json';
 import Container from 'components/Container/Container';
 import ProductList from 'components/Product-list/Product-list';
 import SearchBar from 'components/Search-bar/Search-bar';
 import FilterPrice from 'components/Filter-price/Filter-price';
 
-const HomePage: NextPage = () => {
-  const [productsData, setProductsData] = useState<TProducts[]>(DB);
+type Props = {
+  data: TProducts[];
+};
+
+const HomePage: NextPage = ({ data }: Props) => {
+  const [productsData, setProductsData] = useState(data);
 
   const filteredData = (newData: TProducts[]): void => {
     setProductsData(newData);
@@ -26,6 +29,17 @@ const HomePage: NextPage = () => {
       </Container>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch('https://next-app-data.herokuapp.com/api/mayoral/products');
+  const { data } = await res.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
 };
 
 export default HomePage;
