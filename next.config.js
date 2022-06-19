@@ -4,7 +4,7 @@
 const config = {
   reactStrictMode: true,
   images: {
-    domains: ['media.mayoral.com'],
+    domains: ['media.mayoral.com', 'www.mayoral.com'],
   },
 };
 
