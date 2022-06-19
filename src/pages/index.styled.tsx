@@ -11,3 +11,7 @@ export const OptionsWrapper = styled.div`
     justify-content: space-between;
   }
 `;
+
+export const SearchErrorMessage = styled.h3`
+  text-align: center;
+`;

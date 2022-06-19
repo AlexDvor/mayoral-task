@@ -5,6 +5,5 @@ export type TProducts = {
     price: number;
     discount: number;
     quantity: number;
-  
-    
+    category: string[];
 }

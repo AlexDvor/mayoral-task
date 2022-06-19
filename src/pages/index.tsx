@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NextPage, GetStaticProps } from 'next';
 import { TProducts } from '../../types';
-import { OptionsWrapper } from './index.styled';
+import { OptionsWrapper, SearchErrorMessage } from './index.styled';
 import Container from 'components/Container/Container';
 import ProductList from 'components/Product-list/Product-list';
 import SearchBar from 'components/Search-bar/Search-bar';
@@ -26,6 +26,11 @@ const HomePage: NextPage = ({ data }: Props) => {
           <SearchBar filter={filteredData} data={productsData}></SearchBar>
         </OptionsWrapper>
         <ProductList data={productsData}></ProductList>
+        {productsData.length === 0 && (
+          <SearchErrorMessage>
+            Lo siento, no hemos encontrado nada, inténtalo otra vez por favor
+          </SearchErrorMessage>
+        )}
       </Container>
     </>
   );

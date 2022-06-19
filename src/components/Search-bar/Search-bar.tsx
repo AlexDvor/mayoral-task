@@ -13,12 +13,16 @@ const SearchBar = ({ data, filter }: Props) => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
-    filteredData(value);
+    if (value) {
+      filteredData(value);
+    } else {
+      filter(products);
+    }
   };
 
   const filteredData = (itemName: string): void => {
     const articleName = queryNormalize(itemName);
-    const filteredData = products.filter((item) => queryNormalize(item.name).includes(articleName));
+    const filteredData = products.filter((item) => item.category.includes(articleName));
     filter(filteredData);
   };
 
