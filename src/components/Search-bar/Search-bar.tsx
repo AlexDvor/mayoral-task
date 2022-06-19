@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { WrapperInput, Input, SearchIcon, Wrapper } from './Search-bar.styled';
 import { TProducts } from '../../../types';
-import queryNormalize from 'helpers/queryNormalize';
+import { queryNormalize, itemNameNormalize } from 'helpers/normalize';
 
 type Props = {
   data: TProducts[];
@@ -22,7 +22,11 @@ const SearchBar = ({ data, filter }: Props) => {
 
   const filteredData = (itemName: string): void => {
     const articleName = queryNormalize(itemName);
-    const filteredData = products.filter((item) => item.category.includes(articleName));
+    const filteredData = products.filter((item) => {
+      return (
+        item.category.includes(articleName) || itemNameNormalize(item.name).includes(articleName)
+      );
+    });
     filter(filteredData);
   };
 
