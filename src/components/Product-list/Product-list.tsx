@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { TProducts } from '../../../types';
+import { getShowPrice } from 'helpers/getDiscountPrice';
 import convertedPrice from 'helpers/convertedPrice';
-import getDiscountPrice from 'helpers/getDiscountPrice';
 import checkDiscount from 'helpers/checkDiscount';
 import {
   Wrapper,
@@ -38,7 +38,7 @@ const ProductList = ({ data }: Props) => {
                     {convertedPrice(item.price)} &#8364;
                   </Price>
                   <DiscountPrice hasDiscount={checkDiscount(item.discount)}>
-                    {getDiscountPrice(item.price, item.discount)}
+                    {getShowPrice(item.price, item.discount)}
                   </DiscountPrice>
                 </InfoPrice>
                 <ColorButton type="button">mas colores</ColorButton>
