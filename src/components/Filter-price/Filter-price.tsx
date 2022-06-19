@@ -9,7 +9,7 @@ type Props = {
 };
 
 const FilterPrice = ({ data, filter }: Props) => {
-  const [products, setProducts] = useState(data);
+  const [products] = useState(data);
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     switch (event.target.value) {

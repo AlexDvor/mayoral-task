@@ -9,7 +9,7 @@ type Props = {
 };
 
 const SearchBar = ({ data, filter }: Props) => {
-  const [products, setProducts] = useState(data);
+  const [products] = useState(data);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
